@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Max-Pro2: conectividad para una planta solar</title>
+<meta name="description" content="Proyecto final de Telecomunicaciones, UMG. Enlace de fibra de 148 km, interconexión de edificios y Wi-Fi 7 con estrategia DFS para Max-Pro2. Sitio interactivo con recorrido narrado.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/geist-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/geist-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/theme.js"></script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="nav" id="nav">
+  <div class="nav__in">
+    <a class="brand" href="#inicio" aria-label="Max-Pro2, inicio">
+      <svg class="ic ic--brand" aria-hidden="true"><use href="#i-sun"/></svg>
+      <span>Max-Pro2</span>
+    </a>
+    <nav class="nav__links" id="nav-links" aria-label="Secciones">
+      <a href="#caso">Caso</a>
+      <a href="#medio">Enlace A-B</a>
+      <a href="#edificios">Edificios</a>
+      <a href="#frecuencias">Wi-Fi</a>
+      <a href="#dfs">DFS</a>
+      <a href="#inversion">Inversión</a>
+      <a href="#equipo">Equipo</a>
+    </nav>
+    <div class="nav__actions">
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Cambiar entre tema claro y oscuro" title="Cambiar tema">
+        <svg class="ic ic--moon" aria-hidden="true"><use href="#i-moon"/></svg>
+        <svg class="ic ic--sun" aria-hidden="true"><use href="#i-sun"/></svg>
+      </button>
+      <button class="btn btn--primary btn--sm" type="button" data-tour-start>
+        <svg class="ic" aria-hidden="true"><use href="#i-play"/></svg>
+        <span>Recorrido narrado</span>
+      </button>
+      <button class="icon-btn nav__menu" id="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+        <svg class="ic" aria-hidden="true"><use href="#i-list"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ======================================================= INICIO -->
+<section class="hero" id="inicio" data-tour="inicio">
+  <div class="container hero__grid">
+    <h1>Conectar una planta solar <span class="accent">sin perder un paquete</span></h1>
+    <div class="hero__copy">
+      <p class="hero__sub">Propuesta de telecomunicaciones para Max-Pro2: 148 km de fibra, enlace entre edificios y Wi-Fi 7 sin puntos ciegos.</p>
+      <div class="hero__cta">
+        <button class="btn btn--primary btn--lg" type="button" data-tour-start>
+          <svg class="ic" aria-hidden="true"><use href="#i-play"/></svg>
+          <span>Recorrido narrado</span>
+        </button>
+        <a class="btn btn--ghost btn--lg" href="#cifras">Explorar la propuesta</a>
+      </div>
+    </div>
+    <figure class="hero__map panel" aria-label="Mapa esquemático de la ruta de fibra entre zona 10 y San Manuel Chaparrón">
+      <div id="hero-map" class="map map--hero"></div>
+    </figure>
+  </div>
+</section>
+
+<!-- ======================================================= CIFRAS -->
+<section class="section" id="cifras" data-tour="cifras">
+  <div class="container">
+    <h2 class="h2 reveal">El proyecto en cuatro cifras</h2>
+    <div class="bento">
+      <article class="bento__a panel panel--accent reveal">
+        <p class="bento__label">Fibra óptica monomodo ADSS</p>
+        <p class="bento__num"><span data-count="148">148</span><small> km</small></p>
+        <div class="bento__legs" id="legs" aria-label="Longitud de cada tramo"></div>
+        <p class="bento__note">Tres tramos entre zona 10, Sanarate, Jalapa y la planta, con nodos de repotencia alimentados por energía solar.</p>
+      </article>
+      <article class="bento__b panel reveal">
+        <p class="bento__label">Capacidad del enlace</p>
+        <p class="bento__num"><span data-count="10">10</span><small> Gb/s</small></p>
+        <svg class="bento__wave" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true"><path class="wave" d="M0 20 Q 25 0 50 20 T 100 20 T 150 20 T 200 20 T 250 20 T 300 20 T 350 20 T 400 20"/></svg>
+      </article>
+      <article class="bento__c panel reveal">
+        <p class="bento__label">Access points Wi-Fi 7</p>
+        <p class="bento__num"><span data-count="19">19</span></p>
+        <p class="bento__note">13 en zona 10 y 6 en la planta</p>
+      </article>
+      <article class="bento__d panel reveal">
+        <p class="bento__label">Inversión sin IVA</p>
+        <p class="bento__num bento__num--sm">USD <span data-count="890414" data-fmt="int">890,414</span></p>
+        <p class="bento__note">91 % es la fibra</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= CASO -->
+<section class="section section--tint" id="caso" data-tour="caso">
+  <div class="container split">
+    <div class="split__side">
+      <h2 class="h2 reveal">Una oficina central, una planta y dos edificios</h2>
+      <p class="lead reveal">Max-Pro2 produce energía con paneles solares y la revende a localidades de Jalapa. Su ingeniería trabaja en zona 10 y la planta queda a 148 km por carretera.</p>
+      <div class="sites reveal" id="sites"></div>
+    </div>
+    <div class="split__main">
+      <h3 class="h3 reveal">Tres requerimientos</h3>
+      <div class="accordion reveal" id="reqs">
+        <div class="acc">
+          <button class="acc__btn" type="button" aria-expanded="true" aria-controls="req1">
+            <svg class="ic" aria-hidden="true"><use href="#i-path"/></svg>
+            <span>Conectar la central con la planta</span>
+            <svg class="ic acc__car" aria-hidden="true"><use href="#i-caret-down"/></svg>
+          </button>
+          <div class="acc__panel" id="req1">
+            <p>Establecer el mejor medio físico entre zona 10 y San Manuel Chaparrón para lograr 0 % de paquetes perdidos: ruta, repotencia, routers, costos, rack y monitoreo.</p>
+            <a class="link" href="#medio">Ver la solución</a>
+          </div>
+        </div>
+        <div class="acc">
+          <button class="acc__btn" type="button" aria-expanded="false" aria-controls="req2">
+            <svg class="ic" aria-hidden="true"><use href="#i-buildings"/></svg>
+            <span>Unir los dos edificios de la planta</span>
+            <svg class="ic acc__car" aria-hidden="true"><use href="#i-caret-down"/></svg>
+          </button>
+          <div class="acc__panel" id="req2" hidden>
+            <p>Los edificios están separados 110 metros. Se necesita un medio sin pérdida de paquetes, con equipos y costo definidos.</p>
+            <a class="link" href="#edificios">Ver la solución</a>
+          </div>
+        </div>
+        <div class="acc">
+          <button class="acc__btn" type="button" aria-expanded="false" aria-controls="req3">
+            <svg class="ic" aria-hidden="true"><use href="#i-wifi-high"/></svg>
+            <span>Wi-Fi sin puntos ciegos, con DFS</span>
+            <svg class="ic acc__car" aria-hidden="true"><use href="#i-caret-down"/></svg>
+          </button>
+          <div class="acc__panel" id="req3" hidden>
+            <p>Cobertura total en las tres oficinas con al menos 200 Mb/s de bajada y 100 Mb/s de subida por usuario, y una estrategia DFS para el edificio bajo la ruta de aterrizaje de La Aurora.</p>
+            <a class="link" href="#frecuencias">Ver la solución</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= MEDIO -->
+<section class="section" id="medio" data-tour="medio">
+  <div class="container">
+    <h2 class="h2 reveal">¿Por qué fibra y no otro medio?</h2>
+    <p class="lead reveal">El requisito es 0 % de paquetes perdidos. Elija una alternativa para ver cuánto tiempo estaría sin servicio al año.</p>
+    <div class="media reveal">
+      <div class="seg" role="tablist" id="media-tabs" aria-label="Alternativas de medio físico"></div>
+      <div class="media__body">
+        <div class="media__info panel" id="media-info" aria-live="polite"></div>
+        <div class="media__chart panel" id="media-chart" aria-label="Minutos sin servicio al año"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= RUTA -->
+<section class="section section--tint" id="ruta" data-tour="ruta">
+  <div class="container">
+    <h2 class="h2 reveal">148 km en tres tramos y dos nodos de repotencia</h2>
+    <p class="lead reveal">La fibra viaja en postería por la CA-9, la RN-19 y la RD-18. Seleccione un tramo, o corte la fibra para ver el respaldo.</p>
+    <div class="route reveal">
+      <div class="route__map panel">
+        <div id="route-map" class="map"></div>
+        <div class="route__bar">
+          <button class="btn btn--ghost btn--sm" id="cut-btn" type="button">
+            <svg class="ic" aria-hidden="true"><use href="#i-scissors"/></svg>
+            <span id="cut-label">Cortar la fibra</span>
+          </button>
+          <p class="route__status" id="route-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+      <aside class="route__panel panel" id="tramo-panel" aria-live="polite"></aside>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= OPTICO -->
+<section class="section" id="optico" data-tour="optico">
+  <div class="container">
+    <h2 class="h2 reveal">El presupuesto de potencia decide dónde repotenciar</h2>
+    <p class="lead reveal">Ajuste los parámetros de un tramo. La luz debe llegar por encima de −24 dBm y por debajo de −7 dBm.</p>
+    <div class="optics reveal">
+      <form class="optics__ctrl panel" id="optics-form">
+        <div class="seg seg--tight" role="group" aria-label="Escenarios">
+          <button type="button" class="seg__b" data-preset="t1">Tramo 1</button>
+          <button type="button" class="seg__b" data-preset="t2">Tramo 2</button>
+          <button type="button" class="seg__b" data-preset="t3">Tramo 3</button>
+          <button type="button" class="seg__b" data-preset="best">Mejor caso</button>
+        </div>
+        <div id="optics-fields"></div>
+      </form>
+      <div class="optics__view panel" id="optics-view" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= RACKS -->
+<section class="section section--tint" id="racks" data-tour="racks">
+  <div class="container">
+    <h2 class="h2 reveal">Cada equipo tiene su unidad de rack</h2>
+    <p class="lead reveal">Elija un rack y toque un equipo nuevo para ver modelo, función y precio.</p>
+    <div class="seg reveal" id="rack-tabs" role="tablist" aria-label="Racks y gabinetes"></div>
+    <div class="racks reveal">
+      <div class="racks__view panel" id="rack-view"></div>
+      <aside class="racks__detail panel" id="rack-detail" aria-live="polite"></aside>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= MONITOREO -->
+<section class="section" id="monitoreo" data-tour="monitoreo">
+  <div class="container">
+    <h2 class="h2 reveal">Qué se vigila y cuándo suena la alarma</h2>
+    <p class="lead reveal">Zabbix con tableros en Grafana, dentro de la nube privada existente. El panel simula tres indicadores en vivo.</p>
+    <div class="monitor reveal">
+      <div class="monitor__list" id="monitor-list"></div>
+      <div class="monitor__live panel" id="monitor-live"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= EDIFICIOS -->
+<section class="section section--tint" id="edificios" data-tour="edificios">
+  <div class="container">
+    <h2 class="h2 reveal">110 metros: diez más de lo que aguanta el cobre</h2>
+    <p class="lead reveal">Mueva la distancia y compare cobre y fibra. Luego dañe el ducto para ver el respaldo por radio.</p>
+    <div class="blds reveal">
+      <div class="blds__ruler panel" id="blds-ruler"></div>
+      <div class="blds__plan panel">
+        <div id="blds-plan"></div>
+        <div class="route__bar">
+          <button class="btn btn--ghost btn--sm" id="blds-cut" type="button">
+            <svg class="ic" aria-hidden="true"><use href="#i-scissors"/></svg>
+            <span id="blds-cut-label">Dañar el ducto</span>
+          </button>
+          <p class="route__status" id="blds-status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+    <div class="blds__alts reveal" id="blds-alts"></div>
+  </div>
+</section>
+
+<!-- ======================================================= FRECUENCIAS -->
+<section class="section" id="frecuencias" data-tour="frecuencias">
+  <div class="container">
+    <h2 class="h2 reveal">Tres bandas, un plan: 6 GHz lleva la carga</h2>
+    <p class="lead reveal">Guatemala adoptó 5925 a 7125 MHz. Elija el ancho de canal en 6 GHz y el sitio para ver qué canales usa el diseño.</p>
+    <div class="spec reveal">
+      <div class="spec__ctrl">
+        <div class="seg seg--tight" role="group" aria-label="Sitio" id="spec-site">
+          <button type="button" class="seg__b is-on" data-site="z10">Zona 10</button>
+          <button type="button" class="seg__b" data-site="planta">Planta</button>
+        </div>
+        <div class="seg seg--tight" role="group" aria-label="Ancho de canal en 6 GHz" id="spec-width">
+          <button type="button" class="seg__b" data-w="80">80 MHz</button>
+          <button type="button" class="seg__b is-on" data-w="160">160 MHz</button>
+          <button type="button" class="seg__b" data-w="320">320 MHz</button>
+        </div>
+      </div>
+      <div class="spec__chart panel" id="spec-chart"></div>
+      <p class="spec__note" id="spec-note" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= CAPACIDAD -->
+<section class="section section--tint" id="capacidad" data-tour="capacidad">
+  <div class="container">
+    <h2 class="h2 reveal">Cuántos access points hacen falta</h2>
+    <p class="lead reveal">Cada usuario necesita 300 Mb/s de tiempo de aire para garantizar 200 de bajada y 100 de subida. Cambie usuarios y APs.</p>
+    <div class="cap reveal">
+      <form class="cap__ctrl panel" id="cap-form">
+        <div class="seg seg--tight" role="group" aria-label="Sitio" id="cap-site">
+          <button type="button" class="seg__b is-on" data-site="z10">Zona 10</button>
+          <button type="button" class="seg__b" data-site="e1">Edificio 1</button>
+          <button type="button" class="seg__b" data-site="e2">Edificio 2</button>
+        </div>
+        <div id="cap-fields"></div>
+      </form>
+      <div class="cap__view panel" id="cap-view" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= PLANOS -->
+<section class="section" id="planos" data-tour="planos">
+  <div class="container">
+    <h2 class="h2 reveal">Sin puntos ciegos: los APs sobre los planos</h2>
+    <p class="lead reveal">Cambie el radio de celda para ver dónde faltaría señal. El diseño usa 8 m, medido a −65 dBm en 6 GHz.</p>
+    <div class="seg reveal" id="plan-tabs" role="tablist" aria-label="Planos"></div>
+    <div class="plans reveal">
+      <div class="plans__view panel">
+        <div id="plan-stage" class="plan-stage"></div>
+        <div class="plans__ctrl">
+          <label class="field field--inline">
+            <span class="field__lab">Radio de celda</span>
+            <input type="range" id="plan-r" min="4" max="12" step="0.5" value="8">
+            <output id="plan-r-out" class="mono">8 m</output>
+          </label>
+          <div class="toggles" id="plan-toggles">
+            <button type="button" class="chip is-on" data-t="cells" aria-pressed="true">Celdas</button>
+            <button type="button" class="chip is-on" data-t="chan" aria-pressed="true">Canales</button>
+            <button type="button" class="chip is-on" data-t="blind" aria-pressed="true">Puntos ciegos</button>
+          </div>
+        </div>
+      </div>
+      <aside class="plans__panel panel" id="plan-panel" aria-live="polite"></aside>
+    </div>
+    <div class="gear reveal" id="gear" aria-label="Equipos de la solución Wi-Fi"></div>
+  </div>
+</section>
+
+<!-- ======================================================= DFS -->
+<section class="section section--tint" id="dfs" data-tour="dfs">
+  <div class="container">
+    <h2 class="h2 reveal">Un radar cerca del aeropuerto no debe desconectar a nadie</h2>
+    <p class="lead reveal">El Edificio Las Margaritas está bajo la ruta de aterrizaje de La Aurora. Compare una red sin estrategia con el diseño propuesto.</p>
+    <div class="dfs reveal">
+      <div class="dfs__ctrl">
+        <div class="seg seg--tight" role="group" aria-label="Estrategia" id="dfs-mode">
+          <button type="button" class="seg__b" data-mode="naive">Solo 5 GHz con DFS</button>
+          <button type="button" class="seg__b is-on" data-mode="smart">Diseño propuesto</button>
+        </div>
+        <button class="btn btn--primary btn--sm" id="dfs-run" type="button">
+          <svg class="ic" aria-hidden="true"><use href="#i-airplane-landing"/></svg>
+          <span>Simular radar</span>
+        </button>
+      </div>
+      <div class="dfs__scene panel"><div id="dfs-scene"></div></div>
+      <div class="dfs__bottom">
+        <div class="dfs__timeline panel" id="dfs-timeline" aria-live="polite"></div>
+        <ol class="layers" id="dfs-layers"></ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= INVERSION -->
+<section class="section" id="inversion" data-tour="inversion">
+  <div class="container">
+    <h2 class="h2 reveal">Dónde se va el dinero</h2>
+    <p class="lead reveal">Cada precio es la mediana de cotizaciones de mercado recolectadas en octubre de 2026. Seleccione un requerimiento para ver sus partidas.</p>
+    <div class="money reveal">
+      <div class="money__chart panel" id="money-chart"></div>
+      <div class="money__detail panel" id="money-detail" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= EQUIPO -->
+<section class="section section--tint" id="equipo" data-tour="equipo">
+  <div class="container">
+    <h2 class="h2 reveal">Conclusiones</h2>
+    <ol class="concl reveal" id="concl"></ol>
+    <h3 class="h3 reveal team__h">Grupo de trabajo</h3>
+    <div class="team reveal" id="team"></div>
+    <div class="downloads reveal">
+      <a class="btn btn--ghost" href="documento/Proyecto_Final_MAXPRO2.pdf" download>
+        <svg class="ic" aria-hidden="true"><use href="#i-file-pdf"/></svg>
+        <span>Documento en PDF</span>
+      </a>
+      <a class="btn btn--ghost" href="documento/Proyecto_Final_MAXPRO2.docx" download>
+        <svg class="ic" aria-hidden="true"><use href="#i-file-doc"/></svg>
+        <span>Documento en Word</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__in">
+    <p id="footer-id"></p>
+    <p class="footer__small">Todas las cifras provienen del documento del proyecto. Planos base proporcionados en el planteamiento del curso.</p>
+  </div>
+</footer>
+
+<!-- ======================================================= RECORRIDO -->
+<div class="tour" id="tour" hidden>
+  <div class="tour__bar" id="tour-progress" role="tablist" aria-label="Capítulos del recorrido"></div>
+  <div class="tour__main">
+    <div class="avatar" id="avatar" aria-hidden="true">
+      <svg viewBox="0 0 80 80" width="72" height="72">
+        <circle class="av-halo" cx="40" cy="40" r="37"/>
+        <rect class="av-head" x="12" y="14" width="56" height="52" rx="18"/>
+        <rect class="av-visor" x="19" y="26" width="42" height="20" rx="10"/>
+        <g class="av-eyes"><ellipse class="av-eye" cx="31" cy="36" rx="3.6" ry="4.6"/><ellipse class="av-eye" cx="49" cy="36" rx="3.6" ry="4.6"/></g>
+        <rect class="av-mouth" id="av-mouth" x="30" y="54" width="20" height="3" rx="1.5"/>
+      </svg>
+    </div>
+    <div class="tour__text">
+      <p class="tour__title" id="tour-title"></p>
+      <p class="tour__caption" id="tour-caption" aria-live="polite"></p>
+    </div>
+    <div class="tour__ctrl">
+      <button class="icon-btn" id="tour-prev" type="button" aria-label="Capítulo anterior"><svg class="ic"><use href="#i-skip-back"/></svg></button>
+      <button class="icon-btn icon-btn--main" id="tour-play" type="button" aria-label="Pausar"><svg class="ic" id="tour-play-ic"><use href="#i-pause"/></svg></button>
+      <button class="icon-btn" id="tour-next" type="button" aria-label="Capítulo siguiente"><svg class="ic"><use href="#i-skip-forward"/></svg></button>
+      <button class="icon-btn" id="tour-mute" type="button" aria-label="Silenciar" aria-pressed="false"><svg class="ic" id="tour-mute-ic"><use href="#i-speaker-high"/></svg></button>
+      <button class="icon-btn" id="tour-close" type="button" aria-label="Cerrar recorrido"><svg class="ic"><use href="#i-x"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<div class="tip" id="tip" role="tooltip" hidden></div>
+
+<script src="js/icons.js"></script>
+<script src="js/data.js"></script>
+<script src="js/team.js"></script>
+<script src="js/util.js"></script>
+<script src="js/route.js"></script>
+<script src="js/racks.js"></script>
+<script src="js/wifi.js"></script>
+<script src="js/dfs.js"></script>
+<script src="js/money.js"></script>
+<script src="js/tourdata.js"></script>
+<script src="js/tour.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
