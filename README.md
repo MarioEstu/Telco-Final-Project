@@ -2,6 +2,8 @@
 
 Sitio web interactivo del proyecto final de Telecomunicaciones, Universidad Mariano Gálvez de Guatemala (Facultad de Ingeniería en Sistemas de Información, plan sábados). Presenta la propuesta para el cliente ficticio Max-Pro2: enlace de fibra de 148 km entre zona 10 y San Manuel Chaparrón, enlace entre los dos edificios de la planta y red Wi-Fi 7 con estrategia DFS.
 
+**Sitio publicado:** https://telco-final-project.vercel.app
+
 Es HTML, CSS y JavaScript puro, sin dependencias ni paso de compilación.
 
 ## Grupo 2
