@@ -17,8 +17,8 @@ window.TEAM = {
   professor: '',
   date: 'Octubre de 2026',
   members: [
-    { name: 'Mario Josue López Rodas', carne: '0900-22-9412', role: 'Desarrollador', pct: null, sections: '', review: '' },
-    { name: 'Josue Wilfredo Estrada Recinos', carne: '0900-22-18429', role: 'Coordinador', pct: null, sections: '', review: '' },
+    { name: 'Mario Estuardo López Rodas', carne: '0900-22-9412', role: 'Desarrollador', pct: null, sections: '', review: '' },
+    { name: 'Allan Wilfredo Estrada Recinos', carne: '0900-22-18429', role: 'Coordinador', pct: null, sections: '', review: '' },
     { name: 'Francisco Javier Barrios Saenz De Tejada', carne: '0900-21-1146', role: 'Desarrollador', pct: null, sections: '', review: '' }
   ]
 };

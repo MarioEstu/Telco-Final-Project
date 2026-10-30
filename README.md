@@ -10,8 +10,8 @@ Es HTML, CSS y JavaScript puro, sin dependencias ni paso de compilación.
 
 | Carné | Integrante | Rol |
 |---|---|---|
-| 0900-22-9412 | Mario Josue López Rodas | Desarrollador |
-| 0900-22-18429 | Josue Wilfredo Estrada Recinos | Coordinador |
+| 0900-22-9412 | Mario Estuardo López Rodas | Desarrollador |
+| 0900-22-18429 | Allan Wilfredo Estrada Recinos | Coordinador |
 | 0900-21-1146 | Francisco Javier Barrios Saenz De Tejada | Desarrollador |
 
 ## Cómo verlo
